@@ -3,6 +3,7 @@ import { DefaultLayoutComponent } from "./layouts/default-layout/default-layout.
 import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routes";
+import { HeroSectionComponent } from "./hero-section/hero-section.component";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { AppRoutingModule } from "./app.routes";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HeroSectionComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
