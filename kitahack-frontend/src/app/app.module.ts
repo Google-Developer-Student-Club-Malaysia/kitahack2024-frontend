@@ -7,6 +7,7 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { TeamFormationSectionComponent } from './team-formation-section/team-formation-section.component';
 import { DetailsComponent } from "./details/details.component";
 import { ChatboxComponent } from './chatbox/chatbox.component';
+import { JudgingCriteriaSectionComponent } from './judging-criteria-section/judging-criteria-section.component';
 
 @NgModule({
     declarations: [DefaultLayoutComponent, AppComponent],
@@ -18,7 +19,8 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
         HeroSectionComponent,
         TeamFormationSectionComponent,
         DetailsComponent,
-        ChatboxComponent
+        ChatboxComponent,
+        JudgingCriteriaSectionComponent,
     ]
 })
 export class AppModule {}
