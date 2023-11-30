@@ -1,0 +1,43 @@
+  
+.timeline{
+  @apply grid grid-cols-[1fr,3px,1fr] sm:max-w-[100%] md:w-[90%] xl:w-[2000px] p-[25px] my-0 mx-auto
+}
+
+.timeline_component , .timeline_component_marker{
+  @apply mt-0 mb-[20px] mx-[20px]
+}
+
+.timeline_component{
+   @apply p-[1.5em] rounded-[10px] shadow-md shadow-gray-600
+}
+
+  
+.timeline_middle {
+  @apply relative
+}
+
+.timeline_point {
+  @apply absolute top-0 left-[50%] translate-x-[-50%] w-[20px] h-[20px] bg-white shadow-lg shadow-gray-700  rounded-[50%]
+}
+
+.timeline_center_point{
+  @apply absolute top-1 left-[50%] translate-x-[-50%] w-[10px] h-[10px] rounded-[50%]
+}
+
+
+.timeline_point--bottom {
+  @apply top-auto bottom-0
+}
+
+
+.timeline_component_marker{
+@apply flex flex-col justify-end items-end
+}
+
+.marker-left{
+  @apply self-start;
+}
+
+.mark{
+  @apply px-9 py-1 rounded-2xl text-white font-bold shadow-lg shadow-gray-600
+}
