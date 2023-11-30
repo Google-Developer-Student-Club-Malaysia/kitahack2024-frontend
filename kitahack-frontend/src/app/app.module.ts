@@ -10,6 +10,8 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FAQsSectionComponent } from './faqs-section/faqs-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { CountdownSectionComponent } from './countdown-section/countdown-section.component';
+import { WhatiskitahackSectionComponent } from './what-is-kitahack-section/what-is-kitahack-section.component';
 
 @NgModule({
   declarations: [DefaultLayoutComponent, AppComponent],
@@ -21,6 +23,8 @@ import { FooterComponent } from './footer/footer.component';
 
     NavbarComponent,
     HeroSectionComponent,
+    CountdownSectionComponent,
+    WhatiskitahackSectionComponent,
     TeamFormationSectionComponent,
     DetailsComponent,
     ChatboxComponent,
