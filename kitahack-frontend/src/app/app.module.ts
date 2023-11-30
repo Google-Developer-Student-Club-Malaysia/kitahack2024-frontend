@@ -31,7 +31,7 @@ import { NormalNgoSectionComponent } from './normal-ngo-section/normal-ngo-secti
     ChatboxComponent,
     FAQsSectionComponent,
     FooterComponent,
-    NormalNgoSectionComponent
+    NormalNgoSectionComponent,
   ],
 })
 export class AppModule {}
