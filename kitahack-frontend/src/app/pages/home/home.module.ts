@@ -19,6 +19,7 @@ import { FAQsSectionComponent } from '../../components/faqs-section/faqs-section
 
 // Services
 import { ChapterService } from '../../services/chapter.service';
+import { SubmissionCriteriaComponent } from '../../components/submission-criteria/submission-criteria.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ChapterService } from '../../services/chapter.service';
     ChapterComponent,
     ChapterSectionComponent,
     FAQsSectionComponent,
+    SubmissionCriteriaComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
   providers: [ChapterService],
