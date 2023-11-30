@@ -1,0 +1,37 @@
+<section class="container mx-auto h-72 p-7 bg-center bg-no-repeat bg-cover"
+    style="background-image: url(https://2023.kitahack.com/img/countdown_background.svg)">
+    <h2 class="text-center pb-4 text-3xl md:text-4xl font-medium text-gray-700 dark:text-white">Days until Demo-day</h2>
+    
+    <div class=" flex flex-row gap-5 text-center auto-cols-max justify-center ">
+        <div
+            class="flex flex-col  sm:w-1/4 md:w-1/6 lg:w-1/8 bg-google-red dark:bg-neutral rounded-box text-white dark:text-neutral-content justify-center items-center aspect-video p-1 sm:p-4">
+            <span class="countdown font-bold text-6xl lg:text-7xl dark:text-white">
+                <span id="days">{{ days }}</span>
+            </span>
+            <span class="text-md sm:text-xl font-medium">days</span>
+        </div>
+        <div
+            class="flex flex-col  sm:w-1/4 md:w-1/6 lg:w-1/8 bg-google-blue dark:bg-neutral rounded-box text-white dark:text-neutral-content justify-center items-center p-1 sm:p-4">
+            <span class="countdown font-bold text-6xl lg:text-7xl dark:text-white">
+                <span id="hours">{{ hours }}</span>
+            </span>
+            <span class="text-md sm:text-xl font-medium">hours</span>
+        </div>
+        <div
+            class="flex flex-col  sm:w-1/4 md:w-1/6 lg:w-1/8 bg-google-green dark:bg-neutral rounded-box text-white dark:text-neutral-content justify-center items-center p-1 sm:p-4">
+            <span class="countdown font-bold text-6xl lg:text-7xl dark:text-white">
+                <span id="minutes">{{ minutes }}</span>
+            </span>
+            <span class="text-md sm:text-xl font-medium">minutes</span>
+        </div>
+        <div
+            class="flex flex-col sm:w-1/4 md:w-1/6 lg:w-1/8 bg-google-yellow dark:bg-neutral rounded-box text-white dark:text-neutral-content justify-center items-center p-1 sm:p-4">
+            <span class="countdown font-bold text-6xl lg:text-7xl dark:text-white">
+                <span id="seconds">{{ seconds }}</span>
+            </span>
+            <span class="text-md sm:text-xl font-medium">seconds</span>
+        </div>
+        
+    </div>
+
+</section>
