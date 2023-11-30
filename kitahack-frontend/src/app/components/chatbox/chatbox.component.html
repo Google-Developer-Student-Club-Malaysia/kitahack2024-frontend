@@ -1,6 +1,4 @@
-<div>
-    <div [ngClass]="getComponentClass()" [style.background-color]="bgColor">
-    <ng-content></ng-content>
-    </div>
-    <div [ngClass]="getTailClass()" [style.border-top-color]="bgColor"></div>
+<div [ngClass]="getComponentClass()" [style.background-color]="bgColor">
+  <ng-content></ng-content>
 </div>
+<div [ngClass]="getTailClass()" [style.border-top-color]="bgColor"></div>
