@@ -1,134 +1,40 @@
 <header class="bg-white">
-  <nav
-    class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-    aria-label="Global"
-  >
+  <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a
-        href="#"
-        class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700"
-      >
+      <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700">
         <span class="sr-only">GDSC KitaHack</span>
-        <svg
-          class="w-8 h-8"
-          id="Layer_1"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 495 501.26582"
-        >
-          <image
-            width="125"
-            height="125"
-            transform="scale(3.96 4.01013)"
-            xlink:href="data:image/png;base64,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"
-          />
-        </svg>
-
-        <span><span class="font-bold">GDSC</span> KitaHack</span>
+        <img width="125" height="125" src="assets/img/kitahack.png" />
       </a>
     </div>
     <div class="flex lg:hidden">
-      <button
-        type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-      >
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open main menu</span>
-        <svg
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#overview" class="text-sm font-semibold leading-6 text-gray-700"
-        >Overview</a
-      >
-      <a href="#sponsors" class="text-sm font-semibold leading-6 text-gray-700"
-        >Sponsors</a
-      >
-      <a href="#details" class="text-sm font-semibold leading-6 text-gray-700"
-        >Details</a
-      >
-      <a href="#mentors" class="text-sm font-semibold leading-6 text-gray-700"
-        >Mentors</a
-      >
-      <a href="#faqs" class="text-sm font-semibold leading-6 text-gray-700"
-        >FAQs</a
-      >
+      <a href="#register_now" class="text-sm font-semibold leading-6 text-gray-700">Registeration</a>
+      <a href="#details" class="text-sm font-semibold leading-6 text-gray-700">Details</a>
+      <a href="#faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
 
       <div class="relative">
-        <button
-          type="button"
-          class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-700"
-          aria-expanded="false"
-          (click)="show = show == 'events' ? null : 'events'"
-        >
+        <button type="button" class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1" aria-expanded="false" (click)="show = show == 'events' ? null : 'events'">
           Events
-          <svg
-            class="h-5 w-5 flex-none text-gray-400"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd"
-            />
+          <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
           </svg>
         </button>
 
-        <!--
-          'Product' flyout menu, show/hide based on flyout menu state.
-
-          Entering: "transition ease-out duration-200"
-            From: "opacity-0 translate-y-1"
-            To: "opacity-100 translate-y-0"
-          Leaving: "transition ease-in duration-150"
-            From: "opacity-100 translate-y-0"
-            To: "opacity-0 translate-y-1"
-        -->
-        <div
-          class="absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-          *ngIf="show == 'events'"
-        >
+        <div class="absolute right-0 z-10 w-screen max-w-md mt-3 overflow-hidden bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5" *ngIf="show == 'events'">
           <div class="p-4">
-            <div
-              class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-            >
-              <div
-                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              >
-                <svg
-                  class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
-                  />
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                 </svg>
               </div>
               <div class="flex-auto">
@@ -141,25 +47,10 @@
                 </p>
               </div>
             </div>
-            <div
-              class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-            >
-              <div
-                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              >
-                <svg
-                  class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
-                  />
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                 </svg>
               </div>
               <div class="flex-auto">
@@ -172,25 +63,10 @@
                 </p>
               </div>
             </div>
-            <div
-              class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-            >
-              <div
-                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              >
-                <svg
-                  class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"
-                  />
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                 </svg>
               </div>
               <div class="flex-auto">
@@ -203,25 +79,10 @@
                 </p>
               </div>
             </div>
-            <div
-              class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-            >
-              <div
-                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              >
-                <svg
-                  class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"
-                  />
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
                 </svg>
               </div>
               <div class="flex-auto">
@@ -232,25 +93,10 @@
                 <p class="mt-1 text-gray-600">Connect with third-party tools</p>
               </div>
             </div>
-            <div
-              class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-            >
-              <div
-                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              >
-                <svg
-                  class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-                  />
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                 </svg>
               </div>
               <div class="flex-auto">
@@ -265,350 +111,100 @@
             </div>
           </div>
           <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-            <a
-              href="#"
-              class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
-            >
-              <svg
-                class="h-5 w-5 flex-none text-gray-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z"
-                  clip-rule="evenodd"
-                />
+            <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100">
+              <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
               </svg>
               Watch demo
             </a>
-            <a
-              href="#"
-              class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
-            >
-              <svg
-                class="h-5 w-5 flex-none text-gray-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                  clip-rule="evenodd"
-                />
+            <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100">
+              <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
               </svg>
               Contact sales
             </a>
           </div>
         </div>
       </div>
-
-      <!-- <div class="relative">
-        <button
-          type="button"
-          class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-700"
-          aria-expanded="false"
-          (click)="show = show == 'workshops' ? null : 'workshops'"
-        >
-          Workshops
-          <svg
-            class="h-5 w-5 flex-none text-gray-400"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-
-        <!--
-          'Company' flyout menu, show/hide based on flyout menu state.
-
-          Entering: "transition ease-out duration-200"
-            From: "opacity-0 translate-y-1"
-            To: "opacity-100 translate-y-0"
-          Leaving: "transition ease-in duration-150"
-            From: "opacity-100 translate-y-0"
-            To: "opacity-0 translate-y-1"
-        --
-        @if (show == 'workshops') {
-        <div
-          class="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-white p-4 shadow-lg ring-1 ring-gray-900/5"
-        >
-          <div class="relative rounded-lg p-4 hover:bg-gray-50">
-            <a
-              href="#"
-              class="block text-sm font-semibold leading-6 text-gray-700"
-            >
-              About us
-              <span class="absolute inset-0"></span>
-            </a>
-            <p class="mt-1 text-sm leading-6 text-gray-600">
-              Learn more about our company values and mission to empower others
-            </p>
-          </div>
-          <div class="relative rounded-lg p-4 hover:bg-gray-50">
-            <a
-              href="#"
-              class="block text-sm font-semibold leading-6 text-gray-700"
-            >
-              Careers
-              <span class="absolute inset-0"></span>
-            </a>
-            <p class="mt-1 text-sm leading-6 text-gray-600">
-              Looking for you next career opportunity? See all of our open
-              positions
-            </p>
-          </div>
-          <div class="relative rounded-lg p-4 hover:bg-gray-50">
-            <a
-              href="#"
-              class="block text-sm font-semibold leading-6 text-gray-700"
-            >
-              Support
-              <span class="absolute inset-0"></span>
-            </a>
-            <p class="mt-1 text-sm leading-6 text-gray-600">
-              Get in touch with our dedicated support team or reach out on our
-              community forums
-            </p>
-          </div>
-          <div class="relative rounded-lg p-4 hover:bg-gray-50">
-            <a
-              href="#"
-              class="block text-sm font-semibold leading-6 text-gray-700"
-            >
-              Blog
-              <span class="absolute inset-0"></span>
-            </a>
-            <p class="mt-1 text-sm leading-6 text-gray-600">
-              Read our latest announcements and get perspectives from our team
-            </p>
-          </div>
-        </div>
-        }
-      </div> -->
     </div>
   </nav>
-  <!-- Mobile menu, show/hide based on menu open state. -->
-  <div class="lg:hidden" role="dialog" aria-modal="true">
-    <!-- Background backdrop, show/hide based on slide-over state. -->
+
+  <div class="hidden" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
-    <div
-      class="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-    >
+    <div class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="p-6">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">GDSC KitaHack</span>
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <img class="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <div class="mt-6 flow-root">
+        <div class="flow-root mt-6">
           <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a
-                href="#"
-                class="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-              >
-                <div
-                  class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                >
-                  <svg
-                    class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
-                    />
+            <div class="py-6 space-y-2">
+              <a href="#" class="flex items-center p-3 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                   </svg>
                 </div>
                 Analytics
               </a>
-              <a
-                href="#"
-                class="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-              >
-                <div
-                  class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                >
-                  <svg
-                    class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
-                    />
+              <a href="#" class="flex items-center p-3 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                   </svg>
                 </div>
                 Engagement
               </a>
-              <a
-                href="#"
-                class="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-              >
-                <div
-                  class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                >
-                  <svg
-                    class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"
-                    />
+              <a href="#" class="flex items-center p-3 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                   </svg>
                 </div>
                 Security
               </a>
-              <a
-                href="#"
-                class="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-              >
-                <div
-                  class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                >
-                  <svg
-                    class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"
-                    />
+              <a href="#" class="flex items-center p-3 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 </div>
                 Integrations
               </a>
-              <a
-                href="#"
-                class="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-              >
-                <div
-                  class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                >
-                  <svg
-                    class="h-6 w-6 text-gray-600 group-hover:text-google-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-                    />
+              <a href="#" class="flex items-center p-3 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                   </svg>
                 </div>
                 Automations
               </a>
             </div>
-            <div class="space-y-2 py-6">
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >Features</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >Marketplace</a
-              >
+            <div class="py-6 space-y-2">
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Features</a>
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Marketplace</a>
 
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >About us</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >Careers</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >Support</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                >Blog</a
-              >
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">About us</a>
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Careers</a>
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Support</a>
+              <a href="#" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Blog</a>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 text-center"
-      >
-        <a
-          href="#"
-          class="p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100"
-          >Watch demo</a
-        >
-        <a
-          href="#"
-          class="p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100"
-          >Contact sales</a
-        >
+      <div class="sticky bottom-0 grid grid-cols-2 text-center divide-x divide-gray-900/5 bg-gray-50">
+        <a href="#" class="p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Watch demo</a>
+        <a href="#" class="p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Contact sales</a>
       </div>
     </div>
   </div>
