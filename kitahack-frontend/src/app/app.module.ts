@@ -12,6 +12,7 @@ import { FAQsSectionComponent } from './faqs-section/faqs-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { CountdownSectionComponent } from './countdown-section/countdown-section.component';
 import { WhatiskitahackSectionComponent } from './what-is-kitahack-section/what-is-kitahack-section.component';
+import { NormalNgoSectionComponent } from './normal-ngo-section/normal-ngo-section.component';
 
 @NgModule({
   declarations: [DefaultLayoutComponent, AppComponent],
@@ -30,6 +31,7 @@ import { WhatiskitahackSectionComponent } from './what-is-kitahack-section/what-
     ChatboxComponent,
     FAQsSectionComponent,
     FooterComponent,
+    NormalNgoSectionComponent
   ],
 })
 export class AppModule {}
