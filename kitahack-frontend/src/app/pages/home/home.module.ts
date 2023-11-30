@@ -13,6 +13,7 @@ import { FAQsSectionComponent } from '../../components/faqs-section/faqs-section
 import { ChatboxComponent } from '../../components/chatbox/chatbox.component';
 import { MentorComponent } from '../../components/mentor/mentor.component';
 import { MentorsSectionComponent } from '../../components/mentors-section/mentors-section.component';
+import { SubmissionCriteriaComponent } from '../../components/submission-criteria/submission-criteria.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MentorsSectionComponent } from '../../components/mentors-section/mentor
     MentorComponent,
     MentorsSectionComponent,
     FAQsSectionComponent,
+    SubmissionCriteriaComponent
   ],
   imports: [CommonModule, HomeRoutingModule],
 })
