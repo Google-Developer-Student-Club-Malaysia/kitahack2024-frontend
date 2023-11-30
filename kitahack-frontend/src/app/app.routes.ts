@@ -7,6 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+      }
+    ]
   },
   {
     path: '**',
