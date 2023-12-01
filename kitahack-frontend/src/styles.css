@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: GoogleSans-Bold;
+  src: url("assets/fonts/GoogleSans-Bold-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSans-BoldItalic;
+  src: url("assets/fonts/GoogleSans-BoldItalic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSans-Italic;
+  src: url("assets/fonts/GoogleSans-Italic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSans-Medium;
+  src: url("assets/fonts/GoogleSans-Medium-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSans-MediumItalic;
+  src: url("assets/fonts/GoogleSans-MediumItalic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSans-Regular;
+  src: url("assets/fonts/GoogleSans-Regular-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-Bold;
+  src: url("assets/fonts/GoogleSans-Bold-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-BoldItalic;
+  src: url("assets/fonts/GoogleSans-BoldItalic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-Italic;
+  src: url("assets/fonts/GoogleSans-Italic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-Medium;
+  src: url("assets/fonts/GoogleSans-Medium-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-MediumItalic;
+  src: url("assets/fonts/GoogleSans-MediumItalic-v1.27.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: GoogleSansDisplay-Regular;
+  src: url("assets/fonts/GoogleSans-Regular-v1.27.ttf") format("truetype");
+}
+
+* {
+  font-family: GoogleSansDisplay-Regular, 'Times New Roman', Times, serif;
+}
