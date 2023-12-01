@@ -1,5 +1,5 @@
 .timeline {
-  @apply grid grid-cols-[1fr,1fr] mx-auto h-fit md:max-w-[80%] xl:max-w-[1500px]
+  @apply mx-auto h-fit md:max-w-[80%] xl:max-w-[1500px]
 }
 
 .timeline-middle {
@@ -43,9 +43,9 @@
 }
 
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1025px) {
   .timeline {
-    @apply grid grid-cols-[10px,1fr]
+    @apply mx-auto h-fit md:max-w-[80%] xl:max-w-[1500px]
   }
 
   .timeline-middle, .group {
@@ -69,6 +69,6 @@
   }
 
   .timeline-content-left {
-    @apply box-border border-2 ml-6 my-4 rounded-xl shadow-md shadow-gray-500
+    @apply box-border border-2 ml-6 mr-0 my-4 rounded-xl shadow-md shadow-gray-500
   }
 }
