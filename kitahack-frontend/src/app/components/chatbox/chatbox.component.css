@@ -1,20 +1,20 @@
 .left-chatbox{
-    @apply mr-auto;
+    @apply mr-auto text-white;
 }
 
 .right-chatbox{
-    @apply ml-auto; 
+    @apply ml-auto text-black; 
 }
 
 .common-style{
-    @apply relative w-fit text-white rounded-xl p-3 h-fit sm:max-w-[60%]
+    @apply relative w-fit rounded-xl p-3 h-fit sm:max-w-[60%] z-[1] 
 }
 
 .left-tail{
-    @apply relative w-0 h-0 bottom-4 border-l-[2vh] border-t-[5vh] border-l-transparent rounded-[20%] rotate-[50deg]
+    @apply relative w-0 h-0 bottom-9 z-0 border-l-[30px] border-t-[50px] border-l-transparent rounded-[20%] rotate-[55deg] overflow-hidden
 }
 
 .right-tail{
-    @apply relative w-0 h-0 ml-auto bottom-3 border-l-[2vh] border-t-[5vh] border-l-transparent rounded-[20%] rotate-[320deg]
+    @apply relative w-0 h-0 ml-auto bottom-6 right-2 border-l-[30px] border-t-[50px] border-l-transparent rounded-[20%] rotate-[320deg]
 }
 
