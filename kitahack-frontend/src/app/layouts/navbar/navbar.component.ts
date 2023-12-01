@@ -6,18 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  show: null | string = null;
+  navbarOpen = false;
+  buttonOpen = false;
 
-  onShowEvents() {
-    alert('asdf');
-    if (this.show === 'events') {
-      this.show = null;
-      return;
-    }
-    this.show = 'events';
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 
-  onHide() {
-    this.show = null;
+  toggleButton() {
+    this.buttonOpen = !this.buttonOpen;
   }
 }

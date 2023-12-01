@@ -4,39 +4,44 @@ import { HomeRoutingModule } from './home.routes';
 
 // Components
 import { HomeComponent } from './home.component';
-import { HeroSectionComponent } from '../../components/hero-section/hero-section.component';
-import { CountdownSectionComponent } from '../../components/countdown-section/countdown-section.component';
-import { DetailsComponent } from '../../components/details/details.component';
-import { WhatiskitahackSectionComponent } from '../../components/what-is-kitahack-section/what-is-kitahack-section.component';
-import { TeamFormationSectionComponent } from '../../components/team-formation-section/team-formation-section.component';
-import { JudgingCriteriaSectionComponent } from '../../components/judging-criteria-section/judging-criteria-section.component';
 import { ChatboxComponent } from '../../components/chatbox/chatbox.component';
 import { MentorComponent } from '../../components/mentor/mentor.component';
-import { MentorsSectionComponent } from '../../components/mentors-section/mentors-section.component';
 import { ChapterComponent } from '../../components/chapter/chapter.component';
-import { ChapterSectionComponent } from '../../components/chapter-section/chapter-section.component';
-import { FAQsSectionComponent } from '../../components/faqs-section/faqs-section.component';
+
+// Sections
+import { HeroSectionComponent } from '../../sections/hero-section/hero-section.component';
+import { CountdownSectionComponent } from '../../sections/countdown-section/countdown-section.component';
+import { WhatiskitahackSectionComponent } from '../../sections/what-is-kitahack-section/what-is-kitahack-section.component';
+import { HowToJoinSectionComponent } from '../../sections/how-to-join-section/how-to-join-section.component';
+import { TeamFormationSectionComponent } from '../../sections/team-formation-section/team-formation-section.component';
+import { NormalNgoSectionComponent } from '../../sections/normal-ngo-section/normal-ngo-section.component';
+import { JudgingCriteriaSectionComponent } from '../../sections/judging-criteria-section/judging-criteria-section.component';
+import { SubmissionCriteriaSectionComponent } from '../../sections/submission-criteria-section/submission-criteria-section.component';
+import { MentorsSectionComponent } from '../../sections/mentors-section/mentors-section.component';
+import { ChapterSectionComponent } from '../../sections/chapter-section/chapter-section.component';
+import { FAQsSectionComponent } from '../../sections/faqs-section/faqs-section.component';
 
 // Services
 import { ChapterService } from '../../services/chapter.service';
-import { SubmissionCriteriaComponent } from '../../components/submission-criteria/submission-criteria.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    HeroSectionComponent,
-    CountdownSectionComponent,
-    DetailsComponent,
-    WhatiskitahackSectionComponent,
-    TeamFormationSectionComponent,
-    JudgingCriteriaSectionComponent,
     ChatboxComponent,
     MentorComponent,
-    MentorsSectionComponent,
     ChapterComponent,
+
+    HeroSectionComponent,
+    CountdownSectionComponent,
+    WhatiskitahackSectionComponent,
+    HowToJoinSectionComponent,
+    TeamFormationSectionComponent,
+    NormalNgoSectionComponent,
+    JudgingCriteriaSectionComponent,
+    SubmissionCriteriaSectionComponent,
+    MentorsSectionComponent,
     ChapterSectionComponent,
     FAQsSectionComponent,
-    SubmissionCriteriaComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
   providers: [ChapterService],

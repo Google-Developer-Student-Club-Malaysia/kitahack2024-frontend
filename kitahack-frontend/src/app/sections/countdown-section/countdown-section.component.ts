@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-countdown-section',
   templateUrl: './countdown-section.component.html',
-  styleUrls: ['./countdown-section.component.css']
+  styleUrls: ['./countdown-section.component.css'],
 })
 export class CountdownSectionComponent implements OnInit {
   days: string = '';
@@ -12,7 +12,7 @@ export class CountdownSectionComponent implements OnInit {
   seconds: string = '';
 
   ngOnInit(): void {
-    this.startCountdown("Dec 31, 2023 00:00:00");
+    this.startCountdown('Jan 20, 2024 00:00:00');
   }
 
   startCountdown(endDate: string): void {
@@ -21,7 +21,9 @@ export class CountdownSectionComponent implements OnInit {
       let distance = new Date(endDate).getTime() - now;
 
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
