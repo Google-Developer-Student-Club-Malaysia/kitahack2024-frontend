@@ -1,178 +1,142 @@
-<div class="container max-w-6xl mx-auto">
-  <div class="box-border block w-2/3 mx-auto sm:w-3/5">
-    <app-chatbox [isLeft]="true" bgColor="#DB4437">
-      <p>
-        Ok,cool. How I have formed a team. What's next?
-      </p>
-    </app-chatbox>
-    <app-chatbox bgColor="#4285F4">
-      <p>
-        For now, you can start brainstorming for your project idea. Rememver
-        to come up with a project idea that is related to one or more of the
-        <span class="font-bold">17 Sustainable Development Goals (SDGs).</span> You can refer to the
-        <span class="font-bold text-white">UN Sustaintable Development Goals</span> for more information
-      </p>
-    </app-chatbox>
-    <app-chatbox [isLeft]="true" bgColor="#DB4437">
-      <p class="pl-4">
-        Ok, noted. I will start brainstorming for my project idea. How can I know whether my project idea is good enough for submission?
-      </p>
-    </app-chatbox>
-    <app-chatbox bgColor="#4285F4">
-      <p>
-        Worries not. You maye refer the Submission Criteria below for more information
-      </p>
-    </app-chatbox>
-  </div>
+<section class="container px-6 mx-auto">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <h2 class="font-semibold leading-7 lg:text-center text-google-blue-500">
+      Something you should know
+    </h2>
+    <p class="mt-2 text-3xl lg:text-center font-[GoogleSans-Bold] font-bold tracking-tight text-gray-700 sm:text-4xl">
+      Submission Criteria
+    </p>
 
-
-  <!-- Timeline -->
-  <div class="timeline">
-    <!-- Boilerplate -->
-    <div class="col-span-3 mb-10 text-5xl font-bold text-center">
-      <h1>Submission Criteria</h1>
-    </div>
-    <div class="col-span-2"></div>
-    <div class="timeline_component_marker">
-      <div class="bg-google-red-500 mark marker-left">10 point</div>
-    </div>
-
-    <!-- First row -->
-    <div class="timeline_component_marker">
-      <div class="bg-google-blue-500 mark">10 point</div>
-    </div>
-    <div class="bg-google-red-500 timeline_middle">
-      <div class="timeline_point">
-        <div class="bg-red-600 timeline_center_point"></div>
+    <div class="mt-5 timeline">
+      <div class="order-1 timeline-middle">
+        <div class="left-[99.8%] ml-auto middle-point">
+          <div class="bg-google-red-500 center-point"></div>
+        </div>
+        <div class="ml-auto bg-google-red-500 middle-line"></div>
       </div>
-    </div>
-
-    <div class="transition duration-500 hover:bg-red-600 hover:text-white hover:font-bold timeline_component">
-      <h1 class="mb-2 text-lg font-bold">PROJECT SETUP</h1>
-      <p>1. Please clearly describe the challenge you are solving using a problem statement
-        <br><br>
-        2. What United Nations's Sustainable Developement goal(s) AND target(s)
-        did you choose for your solution? What inspired you to select these specific goals(s) AND target(s)?
-      </p>
-    </div>
-
-    <!-- Second Row -->
-    <div class="transition duration-500 hover:bg-blue-500 hover:text-white hover:font-bold timeline_component">
-      <h1 class="mb-2 text-lg font-bold text-end">IMPLEMENTATION </h1>
-      <p>3. Describe the architecture that your team chose for you solutaion
-        What are the high-level components of your architecture? What is the
-        responsibility of each component?
-        <br><br>
-        4. Which specific products and platforms did you choose to implement these components and why?
-      </p>
-
-    </div>
-
-    <div class="bg-google-blue-500 timeline_middle">
-      <div class="timeline_point">
-        <div class="bg-blue-600 timeline_center_point"></div>
+      <div class="box-border order-2 group">
+        <div class="transition duration-500 border-2 border-google-red-500 group-hover:bg-google-red-500 group-hover:text-white group-hover:font-bold timeline-content-right">
+          <h1 class="content-title font-bold font-[GoogleSans-Bold]">PROJECT SETUP</h1>
+          <br>
+          <span class="bg-google-red-500 group-hover:text-google-red-300 group-hover:bg-white content-mark">10 point </span>
+          <br>
+          <div class="content">
+            <ol class="pl-5 space-y-4 list-decimal">
+              <li>
+                Please clearly describe the challenge you are solving using a problem statement
+              </li>
+              <li>
+                What United Nations's Sustainable Developement goal(s) AND target(s)
+                did you choose for your solution? What inspired you to select these specific goals(s) AND target(s)?
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline_component_marker">
-      <div class="bg-google-green-500 mark marker-left">10 point</div>
-    </div>
-
-    <!-- Third Row -->
-    <div class="timeline_component_marker">
-      <div class="bg-google-yellow-500 mark">10 point</div>
-    </div>
-
-    <div class="bg-google-green-500 timeline_middle">
-      <div class="timeline_point">
-        <div class="bg-green-400 timeline_center_point"></div>
+      <div class="order-4 timeline-middle">
+        <div class="bg-google-blue-500 middle-line"></div>
+        <div class="middle-point">
+          <div class="bg-google-blue-500 center-point"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="transition duration-500 hover:bg-green-500 hover:text-white hover:font-bold timeline_component">
-      <h1 class="mb-2 text-lg font-bold">FEEDBACK / TESTING / ITERATION</h1>
-      <h2 class="mb-2">5. Feedback from users, testing, & iteration</h2>
-      <ul class="pl-8 mb-2 list-disc">
-        <li class="mb-4">
-          walk us through the step you took to test your solution with real users
-          (outside of your team). Provide three specific feedback points you received from real users.
-        </li>
-        <li class="mb-4">
-          what did you learn and how did it help improve your solution? What are three specific things you implemented
-          and improved for your solution based on the feedback from users?
-        </li>
-      </ul>
-      <h2 class="mb-2">6. Code testing and iteration</h2>
-      <ul class="pl-8 list-disc">
-        <li class="mb-4">
-          Highlight one challenge you face while building your code, including details on how you addressed the issues and
-          the technical decisions and implmentations you had to make
-        </li>
-      </ul>
-
-    </div>
-
-    <!-- Fourth Row -->
-    <div class="transition duration-500 hover:bg-yellow-300 hover:text-white hover:font-bold timeline_component">
-      <h1 class="mb-2 text-xl font-bold">SUCCESS AND COMPLETTION OF SOLUTION</h1>
-
-      <p>
-        7. How does your solution address the challenge you are looking to solve for? Describe the success of your solution using metrics,
-        goals, and outcome. What Google technologies are you using to track usgae analytics? Using relevent (or meaningful) statistics,
-        concrete data or numerical examples where possible
-        <br><br>
-        8. Upload a copy of your demo video. Make sure the video demostrate a working application and how a user will interact with the
-        solution. Make sure the video also makes effective use of chosen Google products. Feel free to include infographics or visual
-        representation of the data in you demo video
-      </p>
-    </div>
-
-    <div class="bg-google-yellow-500 timeline_middle">
-      <div class="timeline_point">
-        <div class="bg-yellow-300 timeline_center_point"></div>
+      <div class="order-3 group">
+        <div class="transition duration-500 border-2 border-google-blue-500 group-hover:bg-google-blue-500 group-hover:text-white group-hover:font-bold timeline-content-left">
+          <h1 class="content-title font-bold font-[GoogleSans-Bold]">IMPLEMENTATION</h1> <span class="bg-google-blue-500 group-hover:text-google-blue-300 group-hover:bg-white content-mark">10 point </span>
+          <div class="content">
+            <ol class="pl-5 space-y-4 list-decimal ">
+              <li>
+                Describe the architecture that your team chose for you solutaion
+                What are the high-level components of your architecture? What is the
+                responsibility of each component?
+              </li>
+              <li>
+                Which specific products and platforms did you choose to implement these components and why?
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline_component_marker">
-      <div class="bg-google-red-500 mark marker-left">10 point</div>
-    </div>
-    <!-- Fifth Row -->
-    <div class="timeline_component_marker"></div>
-
-    <div class="bg-google-red-500 timeline_middle">
-      <div class="timeline_point">
-        <div class="bg-red-600 timeline_center_point"></div>
+      <div class="order-5 timeline-middle">
+        <div class="ml-auto bg-google-green-500 middle-line"></div>
+        <div class="left-[99.8%] middle-point">
+          <div class="bg-google-green-500 center-point"></div>
+        </div>
       </div>
-      <div class="timeline_point timeline_point--bottom">
-        <div class="bg-red-600 timeline_center_point"></div>
+      <div class="order-6 group">
+        <div class="transition duration-500 border-2 border-google-green-500 group-hover:bg-google-green-500 group-hover:text-white group-hover:font-bold timeline-content-right">
+          <h1 class="content-title font-bold font-[GoogleSans-Bold]">FEEDBACK / TESTING / ITERATION</h1> <span class="bg-google-green-500 group-hover:text-google-green-300 group-hover:bg-white content-mark">10 point </span>
+          <div class="content">
+            <ul class="pl-5 space-y-4 list-decimal ">
+              <li>
+                Walk us through the step you took to test your solution with real users
+                (outside of your team). Provide three specific feedback points you received from real users.
+              </li>
+              <li>
+                What did you learn and how did it help improve your solution? What are three specific things you implemented
+                and improved for your solution based on the feedback from users?
+              </li>
+              <li>
+                Highlight one challenge you face while building your code, including details on how you addressed the issues and
+                the technical decisions and implmentations you had to make
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="transition duration-500 hover:bg-red-500 hover:text-white hover:font-bold timeline_component ">
-      <h1 class="mb-2 text-xl font-bold">SCALABILITY / NEXT STEP</h1>
-      <p>
-        9. What do you see as the future / next steps for your projects? How would you expand your solution to reach a larger audience?
-        <br><br>
-        10. Explain how the techinical architecture of your solution could support (in its current state or with minor changes) scaling
-        to a larger audience
-      </p>
+      <div class="order-8 timeline-middle">
+        <div class="bg-google-yellow-500 middle-line"></div>
+        <div class="middle-point">
+          <div class="bg-google-yellow-500 center-point"></div>
+        </div>
+      </div>
+      <div class="order-7 group">
+        <div class="transition duration-500 border-2 border-google-yellow-500 group-hover:bg-google-yellow-500 group-hover:text-white group-hover:font-bold timeline-content-left">
+          <h1 class="content-title font-bold font-[GoogleSans-Bold]">SUCCESS AND COMPLETTION OF SOLUTION</h1> <span class="bg-google-yellow-500 group-hover:text-google-yellow-300 group-hover:bg-white content-mark">10 point </span>
+          <div class="content">
+            <ul class="pl-5 space-y-4 list-decimal">
+              <li>
+                How does your solution address the challenge you are looking to solve for? Describe the success of your solution using metrics,
+                goals, and outcome. What Google technologies are you using to track usgae analytics? Using relevent (or meaningful) statistics,
+                concrete data or numerical examples where possible
+              </li>
+              <li>
+                Upload a copy of your demo video. Make sure the video demostrate a working application and how a user will interact with the
+                solution. Make sure the video also makes effective use of chosen Google products. Feel free to include infographics or visual
+                representation of the data in you demo video
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-9 timeline-middle">
+        <div class="ml-auto bg-google-red-500 middle-line"></div>
+        <div class="left-[99.8%] middle-point">
+          <div class="bg-google-red-500 center-point"></div>
+        </div>
+        <div class="left-[99.8%] middle-point end-point">
+          <div class="bg-google-red-500 center-point"></div>
+        </div>
+      </div>
+      <div class="order-10 group">
+        <div class="border-2 border-google-red-500 group-hover:bg-google-red-500 group-hover:text-white group-hover:font-bold timeline-content-right">
+          <h1 class="content-title font-bold font-[GoogleSans-Bold]">SCALABILITY / NEXT STEP</h1> <span class="bg-google-red-500 group-hover:text-google-red-300 group-hover:bg-white content-mark">10 point </span>
+          <div class="content">
+            <ul class="pl-5 space-y-4 list-decimal">
+              <li>
+                What do you see as the future / next steps for your projects? How would you expand your solution to reach a larger audience?
+              </li>
+              <li>
+                Explain how the techinical architecture of your solution could support (in its current state or with minor changes) scaling
+                to a larger audience
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Submission Conversation -->
-  <div class="block w-2/3 mx-auto box-border sm:w-3/5 mt-[100px] xl:max-w-[700px]">
-    <app-chatbox [isLeft]="true" bgColor="#0F9D58">
-      <p class="pl-6">
-        Thanks for the explanation. Now I have my project ready to be submitted.
-        Can I know how will my project be judged?
-      </p>
-    </app-chatbox>
-    <app-chatbox bgColor="#F4B400">
-      <p class="pl-4">
-        Worries not. You may refer the <span class="font-bold text-white">Judging Criteria</span> below for more information
-      </p>
-
-    </app-chatbox>
-  </div>
-
-</div>
+</section>
