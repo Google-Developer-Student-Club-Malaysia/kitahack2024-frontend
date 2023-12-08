@@ -9,6 +9,8 @@
       </p>
 
       <ng-container *ngFor="let block of blocks" [ngSwitch]="block.type">
+        <app-paragraph *ngSwitchCase="'paragraph'" [value]="block.data.text" />
+        <app-image *ngSwitchCase="'image'" />
         <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
         <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
         <app-table *ngSwitchCase="'table'" [value]="block.data.content" />

@@ -8,6 +8,8 @@ import { EventComponent } from './event.component';
 // Services
 import { ChapterService } from '../../services/chapter.service';
 import { ClientPageService } from '../../services/clientpage.service';
+import { ParagraphComponent } from '../../components/paragraph/paragraph.component';
+import { ImageComponent } from '../../components/image/image.component';
 import { ListComponent } from '../../components/list/list.component';
 import { NestedListComponent } from '../../components/nested-list/nested-list.component';
 import { TableComponent } from '../../components/table/table.component';
@@ -15,6 +17,8 @@ import { TableComponent } from '../../components/table/table.component';
 @NgModule({
   declarations: [
     EventComponent,
+    ParagraphComponent,
+    ImageComponent,
     ListComponent,
     NestedListComponent,
     TableComponent,
