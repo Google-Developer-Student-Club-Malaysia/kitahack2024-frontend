@@ -1,43 +1,74 @@
-  
-.timeline{
-  @apply grid grid-cols-[1fr,3px,1fr] sm:max-w-[100%] md:w-[90%] xl:w-[2000px] p-[25px] my-0 mx-auto
+.timeline {
+  @apply mx-auto h-fit md:max-w-[80%] xl:max-w-[1500px]
 }
 
-.timeline_component , .timeline_component_marker{
-  @apply mt-0 mb-[20px] mx-[20px]
-}
-
-.timeline_component{
-   @apply p-[1.5em] rounded-[10px] shadow-md shadow-gray-600
-}
-
-  
-.timeline_middle {
+.timeline-middle {
   @apply relative
 }
 
-.timeline_point {
-  @apply absolute top-0 left-[50%] translate-x-[-50%] w-[20px] h-[20px] bg-white shadow-lg shadow-gray-700  rounded-[50%]
+.middle-point {
+  @apply absolute top-0 translate-x-[-50%] w-[20px] h-[20px] bg-white shadow-lg shadow-gray-700 rounded-[50%]
 }
 
-.timeline_center_point{
-  @apply absolute top-1 left-[50%] translate-x-[-50%] w-[10px] h-[10px] rounded-[50%]
+.center-point {
+  @apply w-[10px] h-[10px] rounded-[50%] mx-auto my-[25%]
+}
+
+.end-point {
+  @apply top-auto
+}
+
+.middle-line {
+  @apply w-[3px] h-[100%]
+}
+
+.timeline-content-right {
+  @apply box-border border-2 ml-6 my-4 rounded-xl shadow-md shadow-gray-500
+}
+
+.timeline-content-left {
+  @apply box-border border-2 mr-6 my-4 rounded-xl shadow-md shadow-gray-500
+}
+
+.content-title {
+  @apply pt-10 px-10 inline-block mb-3 text-xl
+}
+
+.content-mark {
+  @apply inline-block mb-3 px-5 mx-10 text-white font-bold rounded-[15px]
+}
+
+.content {
+  @apply mt-5 pb-10 px-10
 }
 
 
-.timeline_point--bottom {
-  @apply top-auto bottom-0
-}
+@media screen and (max-width: 1025px) {
+  .timeline {
+    @apply mx-auto h-fit md:max-w-[80%] xl:max-w-[1500px]
+  }
 
+  .timeline-middle, .group {
+    @apply order-none
+  }
 
-.timeline_component_marker{
-@apply flex flex-col justify-end items-end
-}
+  .middle-point {
+    @apply absolute top-0 translate-x-[-50%] w-[20px] h-[20px] left-[99.8%] bg-white shadow-lg shadow-gray-700 rounded-[50%]
+  }
 
-.marker-left{
-  @apply self-start;
-}
+  .middle-line {
+    @apply w-[3px] h-[100%] ml-auto
+  }
 
-.mark{
-  @apply px-9 py-1 rounded-2xl text-white font-bold shadow-lg shadow-gray-600
+  .end-point {
+    @apply top-auto
+  }
+
+  .timeline-content-right {
+    @apply box-border border-2 ml-6 my-4 rounded-xl shadow-md shadow-gray-500
+  }
+
+  .timeline-content-left {
+    @apply box-border border-2 ml-6 mr-0 my-4 rounded-xl shadow-md shadow-gray-500
+  }
 }

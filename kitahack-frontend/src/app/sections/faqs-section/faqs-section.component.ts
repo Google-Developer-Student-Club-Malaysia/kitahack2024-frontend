@@ -21,11 +21,11 @@ export class FAQsSectionComponent {
     },
     {
       q: 'Can I pick a solution outside the scope of the 17 Sustainable Development Goals (SDGs)?',
-      a: 'While you are welcome to explore any solution ideas, for the purpose of the Global Solution Challenge (GSC) and KitHack 2023 competition, you are required to select a theme within the 17 SDGs.',
+      a: 'While you are welcome to explore any solution ideas, for the purpose of the Global Solution Challenge (GSC) and KitHack 2024 competition, you are required to select a theme within the 17 SDGs.',
     },
     {
       q: 'What happens after KitaHack?',
-      a: "After KitaHack, you'll have the opportunity to refine and improve your solution for the 2023 Global Solution Challenge.",
+      a: "After KitaHack, you'll have the opportunity to refine and improve your solution for the 2024 Global Solution Challenge.",
     },
     {
       q: 'Can I participate in multiple teams?',

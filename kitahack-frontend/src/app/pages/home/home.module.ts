@@ -12,6 +12,7 @@ import { ChapterComponent } from '../../components/chapter/chapter.component';
 import { HeroSectionComponent } from '../../sections/hero-section/hero-section.component';
 import { CountdownSectionComponent } from '../../sections/countdown-section/countdown-section.component';
 import { WhatiskitahackSectionComponent } from '../../sections/what-is-kitahack-section/what-is-kitahack-section.component';
+import { SdgSectionComponent } from '../../sections/sdg-section/sdg-section.component';
 import { HowToJoinSectionComponent } from '../../sections/how-to-join-section/how-to-join-section.component';
 import { TeamFormationSectionComponent } from '../../sections/team-formation-section/team-formation-section.component';
 import { NormalNgoSectionComponent } from '../../sections/normal-ngo-section/normal-ngo-section.component';
@@ -34,6 +35,7 @@ import { ChapterService } from '../../services/chapter.service';
     HeroSectionComponent,
     CountdownSectionComponent,
     WhatiskitahackSectionComponent,
+    SdgSectionComponent,
     HowToJoinSectionComponent,
     TeamFormationSectionComponent,
     NormalNgoSectionComponent,
