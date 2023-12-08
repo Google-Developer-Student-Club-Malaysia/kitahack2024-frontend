@@ -1,0 +1,22 @@
+<section class="container px-6 mx-auto mt-40">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <div *ngIf="clientPage !== undefined && chapter !== undefined && blocks.length > 0">
+      <h2 class="font-semibold leading-7 text-google-blue-500">
+        {{ clientPage.chapter.name }}
+      </h2>
+      <p class="mt-2 text-3xl font-[GoogleSans-Bold] font-bold tracking-tight text-gray-700 sm:text-4xl">
+        {{ clientPage.name }}
+      </p>
+
+      <ng-container *ngFor="let block of blocks" [ngSwitch]="block.type">
+        <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
+        <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
+        <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
+      </ng-container>
+    </div>
+
+    <div *ngIf="clientPage === undefined || chapter === undefined || blocks.length <= 0" class="text-center">
+      <img src="/assets/img/google_developers_preloader.gif" alt="Google DevelopersPreloader">
+    </div>
+  </div>
+</section>

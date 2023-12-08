@@ -1,0 +1,21 @@
+<section class="my-5">
+  <div *ngIf="style == 'unordered'">
+    <ul *ngFor="let element of value" class="max-w-md ml-5 space-y-1 text-gray-500 list-disc dark:text-gray-400">
+      <li>{{ element.content }}</li>
+
+      <ng-container *ngIf="element.items.length > 0">
+        <app-nested-list [value]="element.items" [style]="style"></app-nested-list>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div *ngIf="style == 'ordered'">
+    <ul *ngFor="let element of value" class="max-w-md ml-5 space-y-1 text-gray-500 list-decimal dark:text-gray-400">
+      <li>{{ element.content }}</li>
+
+      <ng-container *ngIf="element.items.length > 0">
+        <app-nested-list [value]="element.items" [style]="style"></app-nested-list>
+      </ng-container>
+    </ul>
+  </div>
+</section>
