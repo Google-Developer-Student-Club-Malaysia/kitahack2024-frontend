@@ -14,6 +14,14 @@
         <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
         <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
         <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
+        <app-attaches *ngSwitchCase="'attaches'" [value]="block.data"/>
+        <app-check-list *ngSwitchCase="'checklist'" [value]="block.data.items" />
+        <app-delimiter *ngSwitchCase="'delimiter'" [value]="block.data" />
+        <app-header *ngSwitchCase="'header'" [value]="block.data"/>
+        <app-link-tool *ngSwitchCase="'linkTool'" [value]="block.data"/>
+        <app-personality *ngSwitchCase="'personality'" [value]="block.data"/>
+        <app-quote *ngSwitchCase="'quote'" [value]="block.data"/>
+        <app-warning *ngSwitchCase="'warning'" [value]="block.data"/>
       </ng-container>
     </div>
 

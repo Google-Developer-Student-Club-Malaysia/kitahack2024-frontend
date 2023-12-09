@@ -1,1 +1,23 @@
-<p>image works!</p>
+<section class="container px-6 mx-auto">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <div
+      [ngClass]="{
+        'bg-white shadow-lg dark:bg-gray-300 rounded-[60px] py-5 px-5': value.withBackground
+      }"
+    >
+      <img
+        [src]="value.file.url"
+        [alt]="value.caption"
+        [ngStyle]="{
+          width: value.stretched ? '100%' : 'auto',
+          height: value.stretched ? 'auto' : '100%',
+          'border-right': value.withBorder ? '5px solid #FF0000' : 'none',
+          'border-left': value.withBorder ? '5px solid #0000FF' : 'none',
+          'border-top': value.withBorder ? '5px solid #00FF00' : 'none',
+          'border-bottom': value.withBorder ? '5px solid #FFFF00' : 'none'
+        }"
+        class="mx-auto rounded-2xl"
+      />
+    </div>
+  </div>
+</section>
