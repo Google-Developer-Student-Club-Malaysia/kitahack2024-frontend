@@ -1,0 +1,24 @@
+<section class="container px-6 mx-auto">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <div class="my-5">
+    <ul>
+      <li *ngFor="let item of value" class="my-5">
+        <div class="flex items-center">
+          <input
+            id="checked-checkbox"
+            type="checkbox"
+            value=""
+            [checked]="item.checked"
+            class="transition duration-300 w-8 h-8 text-green-600 text-2xl bg-google-red-300 border-gray-300 rounded-2xl focus:checked:ring-google-green-300 focus:ring-google-red-500 dark:text-green-600 dark:focus:ring-google-red-300  dark:focus:checked:ring-google-green-500 dark:bg-google-red-500"
+          />
+          <label
+            for="checked-checkbox"
+            class="ms-2 text-lg font-[GoogleSansDisplay-Bold] font-medium text-gray-900 dark:text-gray-300"
+            >{{ item.text }}</label
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</section>
