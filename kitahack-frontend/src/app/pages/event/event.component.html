@@ -10,10 +10,14 @@
 
       <ng-container *ngFor="let block of blocks" [ngSwitch]="block.type">
         <app-paragraph *ngSwitchCase="'paragraph'" [value]="block.data.text" />
-        <app-image *ngSwitchCase="'image'" />
+        <app-image *ngSwitchCase="'image'" [url]="block.data.file.url" [caption]="block.data.caption" [withBorder]="block.data.withBorder" [withBackground]="block.data.withBackground" [stretched]="block.data.stretched" />
+        <app-delimiter *ngSwitchCase="'delimiter'" />
+        <app-personality *ngSwitchCase="'personality'" [name]="block.data.name" [description]="block.data.description" [link]="block.data.link" [photo]="block.data.photo" />
         <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
         <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
         <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
+        <app-warning *ngSwitchCase="'warning'" [title]="block.data.title" [message]="block.data.message" />
+        <app-link-tool *ngSwitchCase="'linkTool'" [link]="block.data.link" [title]="block.data.meta.title" [description]="block.data.meta.description" />
       </ng-container>
     </div>
 

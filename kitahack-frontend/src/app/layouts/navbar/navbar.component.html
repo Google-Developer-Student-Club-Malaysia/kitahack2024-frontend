@@ -51,6 +51,10 @@
                 </p>
               </div>
             </div>
+
+            <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+              No events available
+            </div>
           </div>
         </div>
       </div>
@@ -249,6 +253,10 @@
                     {{ clientPage.chapter.name }}
                   </p>
                 </div>
+              </div>
+
+              <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+                No events available
               </div>
             </div>
           </div>
