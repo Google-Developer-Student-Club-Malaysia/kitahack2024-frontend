@@ -58,10 +58,6 @@ export interface BlockDataCode extends BlockData {
   showlinenumbers: boolean;
 }
 
-export interface BlockDataRaw extends BlockData {
-  html: string;
-}
-
 export interface BlockDataQuote extends BlockData {
   text: string;
   caption: string;

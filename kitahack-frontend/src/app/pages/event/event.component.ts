@@ -18,7 +18,6 @@ import {
   BlockDataParagraph,
   BlockDataPersonality,
   BlockDataQuote,
-  BlockDataRaw,
   BlockDataTable,
   BlockDataWarning,
 } from '../../types/blocks.type';
@@ -132,16 +131,6 @@ export class EventComponent implements OnInit {
                       language: block.data.language,
                       showlinenumbers: block.data.showlinenumbers,
                     } as BlockDataCode,
-                  });
-                  break;
-
-                case 'raw':
-                  blocks.push({
-                    id: block.id,
-                    type: block.type,
-                    data: {
-                      html: block.data.html,
-                    } as BlockDataRaw,
                   });
                   break;
 
