@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routes';
+import { AppComponent } from './app.component';
 
 // Layouts
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
-
 
 @NgModule({
   declarations: [
@@ -18,9 +18,6 @@ import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.
   ],
   providers: [],
   bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
 })
 export class AppModule {}

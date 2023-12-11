@@ -10,18 +10,24 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
-      }
-    ]
+        loadChildren: () =>
+          import('./pages/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'event',
+        loadChildren: () =>
+          import('./pages/event/event.module').then((m) => m.EventModule),
+      },
+    ],
   },
   {
     path: '**',
     redirectTo: '',
-  }
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

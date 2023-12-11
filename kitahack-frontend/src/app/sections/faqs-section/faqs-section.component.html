@@ -1,0 +1,25 @@
+<section class="container px-6 mx-auto">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <h2 class="font-semibold leading-7 lg:text-center text-google-yellow-500">
+      Have Questions?
+    </h2>
+    <p class="mt-2 text-3xl lg:text-center font-[GoogleSans-Bold] font-bold tracking-tight text-gray-700 sm:text-4xl">
+      Frequently Asked Questions
+    </p>
+
+    <dl class="space-y-8 divide-y divide-gray-900/10">
+      @for (faq of faqs; track $index) {
+      <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <dt class="text-base font-semibold leading-7 text-gray-700 lg:col-span-5">
+          {{ faq.q }}
+        </dt>
+        <dd class="mt-4 lg:col-span-7 lg:mt-0">
+          <p class="text-base leading-7 text-gray-600">
+            {{ faq.a }}
+          </p>
+        </dd>
+      </div>
+      }
+    </dl>
+  </div>
+</section>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ClientPage } from '../../types/clientpage.type';
 
 @Component({
   selector: 'app-navbar',
@@ -6,18 +7,27 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  show: null | string = null;
+  @Input()
+  clientPages: ClientPage[] = [];
 
-  onShowEvents() {
-    alert('asdf');
-    if (this.show === 'events') {
-      this.show = null;
-      return;
-    }
-    this.show = 'events';
+  moreButtonOpen = false;
+  moreNavbarOpen = false;
+  eventButtonOpen = false;
+  eventNavbarOpen = false;
+
+  toggleMoreButton() {
+    this.moreButtonOpen = !this.moreButtonOpen;
   }
 
-  onHide() {
-    this.show = null;
+  toggleMoreNavbar() {
+    this.moreNavbarOpen = !this.moreNavbarOpen;
+  }
+
+  toggleEventButton() {
+    this.eventButtonOpen = !this.eventButtonOpen;
+  }
+
+  toggleEventNavbar() {
+    this.eventNavbarOpen = !this.eventNavbarOpen;
   }
 }

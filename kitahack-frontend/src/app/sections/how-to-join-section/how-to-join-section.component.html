@@ -1,0 +1,60 @@
+<section class="container px-6 mx-auto">
+  <div class="flex flex-col px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <h2 class="font-semibold leading-7 lg:text-center text-google-yellow-500">
+      How to join?
+    </h2>
+    <p class="lg:text-center mt-2 text-3xl font-[GoogleSans-Bold] font-bold tracking-tight text-gray-700 sm:text-4xl">
+      A Conversation Between Two Friends
+    </p>
+
+    <app-chatbox class="mt-10" [isLeft]="true" bgColor="#4285F4">
+      <p class="p-1 text-white">
+        Eh, I heard that KitaHack is coming back for year 2024 leh.
+        Wanna join mou?
+      </p>
+    </app-chatbox>
+
+    <app-chatbox bgColor="#DB4437">
+      <p class="p-1 text-white">
+        KitaHack? I never heard about it before. What is it about?
+      </p>
+    </app-chatbox>
+
+    <app-chatbox [isLeft]="true" bgColor="#4285F4">
+      <div class="p-1 text-white">
+        Walao, you seriously don't know ah? It is the
+        <span class="font-[GoogleSans-Bold] font-bold text-white">
+          biggest annual hackathon
+        </span>
+        organised by GDSC Malaysia for us to better prepare for
+        <span class="font-[GoogleSans-Bold] font-bold text-white">
+          Google Solution Challenge.
+        </span>
+        The participants need to come out with an innovative solution that solves one or
+        many SDGs problems using Google Technologies
+      </div>
+    </app-chatbox>
+
+    <app-chatbox bgColor="#DB4437">
+      <div class="p-1 text-white">
+        Wahh, it seems interesting la. I think I would give it a
+        try. First of all, I need to find my teammates? How can I get more
+        information about KitaHack team formation?
+      </div>
+    </app-chatbox>
+
+    <app-chatbox [isLeft]="true" bgColor="#4285F4">
+      <div class="p-1 text-white">
+        Worries not. You may refer the <span class="font-[GoogleSans-Bold] font-bold text-white">Team Formation</span> below for
+        more information
+      </div>
+    </app-chatbox>
+
+    <app-chatbox bgColor="#DB4437">
+      <div class="p-1 text-white">
+        Ok. Thank you very much
+      </div>
+    </app-chatbox>
+  </div>
+
+</section>

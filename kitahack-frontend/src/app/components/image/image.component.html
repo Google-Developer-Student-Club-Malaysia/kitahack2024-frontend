@@ -1,0 +1,9 @@
+<section class="mt-5">
+  <div [ngClass]="withBackground ? 'py-5 bg-gray-400' : ''">
+    <img src="{{url}}" alt="{{caption}}" [ngClass]="{
+      'p-5 rounded-md border-2 border-gray-600': withBorder,
+      'w-full': stretched,
+      'mx-auto h-[150px]': !stretched,
+    }" class="" />
+  </div>
+</section>
