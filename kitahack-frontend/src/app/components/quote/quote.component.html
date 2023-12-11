@@ -1,14 +1,10 @@
-<section class="container px-6 mx-auto">
-  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
-    <div class="my-3 p-3 rounded-2xl bg-gray-100 box-border dark:bg-gray-300">
-      <div
-        [ngClass]="setAlignment() + ' mt-5 px-5 italic font-[Whisper] text-5xl'"
-      >
-        {{ value.text }}
-      </div>
-      <div class="mt-5 mr-5 text-right text-[10px] italic text-lg">
-        {{ value.caption }}
-      </div>
+<section class="mt-5">
+  <div class="box-border px-3 py-5 bg-gray-100 rounded-2xl dark:bg-gray-300">
+    <div [ngClass]="setAlignment() + ' mt-5 px-5 italic font-[Whisper] text-5xl'">
+      {{ value.text }}
+    </div>
+    <div class="mt-5 mr-5 text-right text-[10px] italic text-lg font-[GoogleSans-Italic]">
+      {{ value.caption }}
     </div>
   </div>
 </section>

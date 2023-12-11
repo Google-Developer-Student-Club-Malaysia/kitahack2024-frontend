@@ -9,24 +9,25 @@
       </p>
 
       <ng-container *ngFor="let block of blocks" [ngSwitch]="block.type">
-        <app-paragraph *ngSwitchCase="'paragraph'" [value]="block.data.text" />
-        <app-image *ngSwitchCase="'image'" />
+        <app-header *ngSwitchCase="'header'" [value]="block.data" />
+        <app-paragraph *ngSwitchCase="'paragraph'" [value]=" block.data.text" />
+        <app-image *ngSwitchCase="'image'" [url]="block.data.file.url" [caption]="block.data.caption" [withBorder]="block.data.withBorder" [withBackground]="block.data.withBackground" [stretched]="block.data.stretched" />
+        <app-delimiter *ngSwitchCase="'delimiter'" />
+        <app-personality *ngSwitchCase="'personality'" [name]="block.data.name" [description]="block.data.description" [link]="block.data.link" [photo]="block.data.photo" />
+        <app-attaches *ngSwitchCase="'attaches'" [value]="block.data" />
+        <app-quote *ngSwitchCase="'quote'" [value]="block.data" />
+        <app-code *ngSwitchCase="'code'" [value]="block.data" />
         <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
         <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
-        <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
-        <app-attaches *ngSwitchCase="'attaches'" [value]="block.data"/>
         <app-check-list *ngSwitchCase="'checklist'" [value]="block.data.items" />
-        <app-delimiter *ngSwitchCase="'delimiter'" [value]="block.data" />
-        <app-header *ngSwitchCase="'header'" [value]="block.data"/>
-        <app-link-tool *ngSwitchCase="'linkTool'" [value]="block.data"/>
-        <app-personality *ngSwitchCase="'personality'" [value]="block.data"/>
-        <app-quote *ngSwitchCase="'quote'" [value]="block.data"/>
-        <app-warning *ngSwitchCase="'warning'" [value]="block.data"/>
+        <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
+        <app-warning *ngSwitchCase="'warning'" [title]="block.data.title" [message]="block.data.message" />
+        <app-link-tool *ngSwitchCase="'linkTool'" [link]="block.data.link" [title]="block.data.meta.title" [description]="block.data.meta.description" />
       </ng-container>
     </div>
 
     <div *ngIf="clientPage === undefined || chapter === undefined || blocks.length <= 0" class="text-center">
-      <img src="/assets/img/google_developers_preloader.gif" alt="Google DevelopersPreloader">
+      <img src="/assets/img/google_developers_preloader.gif" alt="Google Developers Preloader">
     </div>
   </div>
 </section>

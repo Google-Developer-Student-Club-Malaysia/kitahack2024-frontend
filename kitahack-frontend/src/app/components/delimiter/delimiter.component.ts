@@ -1,12 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BlockDataDelimiter } from '../../types/blocks.type';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-delimiter',
   templateUrl: './delimiter.component.html',
-  styleUrl: './delimiter.component.css'
+  styleUrl: './delimiter.component.css',
 })
-export class DelimiterComponent {
-  @Input() value: any
-}
+export class DelimiterComponent {}

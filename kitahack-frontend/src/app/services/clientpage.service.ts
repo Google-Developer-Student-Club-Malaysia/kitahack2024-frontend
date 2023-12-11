@@ -11,10 +11,20 @@ export class ClientPageService {
   constructor(private http: HttpClient) {}
 
   getClientPages(): Observable<ClientPage[]> {
-    return this.http.get<ClientPage[]>(`${environment.api.baseUrl}/client_page/`);
+    return this.http.get<ClientPage[]>(
+      `${environment.api.baseUrl}/client_page/`
+    );
   }
 
-  getClientPage(id: string): Observable<ClientPage> {
-    return this.http.get<ClientPage>(`${environment.api.baseUrl}/client_page/${id}`);
+  getClientPageById(id: string): Observable<ClientPage> {
+    return this.http.get<ClientPage>(
+      `${environment.api.baseUrl}/client_page/${id}`
+    );
+  }
+
+  getClientPageByUrl(url: string): Observable<ClientPage> {
+    return this.http.get<ClientPage>(
+      `${environment.api.baseUrl}/client_page/url/${url}`
+    );
   }
 }

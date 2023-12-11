@@ -1,7 +1,7 @@
 <header class="fixed top-0 z-20 w-full bg-white start-0">
   <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700">
+      <a routerLink="/" class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700">
         <span class="sr-only">GDSC KitaHack {{ clientPages.length.toString() }}</span>
         <img width="125" height="125" src="assets/img/kitahack.png" />
       </a>
@@ -9,7 +9,7 @@
     <div class="flex space-x-5 lg:hidden">
       <button (click)="toggleEventNavbar()" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open event menu</span>
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="w-6 h-6" fill="none" st1roke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"></path>
         </svg>
       </button>
@@ -22,8 +22,8 @@
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#hero" class="text-sm font-semibold leading-6 text-gray-700">Overview</a>
-      <a href="#faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
+      <a routerLink="/" fragment="hero" class="text-sm font-semibold leading-6 text-gray-700">Overview</a>
+      <a routerLink="/" fragment="faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
 
       <div class="relative">
         <button (click)="toggleEventButton()" type="button" class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1" aria-expanded="false">
@@ -42,7 +42,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a [routerLink]="'/event/' + clientPage.id" class="block font-semibold text-gray-700">
+                <a [routerLink]="'/event/' + clientPage.url" class="block font-semibold text-gray-700">
                   {{ clientPage.name }}
                   <span class="absolute inset-0" (click)="toggleEventButton()"></span>
                 </a>
@@ -50,6 +50,10 @@
                   {{ clientPage.chapter.name }}
                 </p>
               </div>
+            </div>
+
+            <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+              No events available
             </div>
           </div>
         </div>
@@ -72,7 +76,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#hero" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                   What is KitaHack
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -88,7 +92,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#sdg" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                   What is Sustainable Development Goals?
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -104,7 +108,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#how-to-join" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                   How to join
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -120,7 +124,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#team-formation" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                   Team Formation
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -136,7 +140,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#tracks" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                   Tracks
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -152,7 +156,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                   Judging Criteria
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -168,7 +172,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                   Submission Criteria
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -184,7 +188,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#mentors" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                   Mentors
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -200,7 +204,7 @@
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#chapters" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                   Chapters
                   <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
@@ -211,7 +215,7 @@
             </div>
           </div>
           <div class="sticky bottom-0 flex flex-row w-full text-center bg-gray-50">
-            <a href="https://gdsc.community.dev/events/details/developer-student-clubs-monash-university-malaysia-presents-kitahack-2024-kickoff-session/" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
+            <a routerLink="/https://forms.gle/YCZZj5EQg5vS61y78" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
           </div>
         </div>
       </div>
@@ -241,7 +245,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a [routerLink]="'/event/' + clientPage.id" class="block font-semibold text-gray-700">
+                  <a (click)="toggleEventNavbar()" [routerLink]="'/event/' + clientPage.url" class="block font-semibold text-gray-700">
                     {{ clientPage.name }}
                     <span class="absolute inset-0" (click)="toggleEventButton()"></span>
                   </a>
@@ -249,6 +253,10 @@
                     {{ clientPage.chapter.name }}
                   </p>
                 </div>
+              </div>
+
+              <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+                No events available
               </div>
             </div>
           </div>
@@ -280,7 +288,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#hero" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                     What is KitaHack
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -296,9 +304,9 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#sdg" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                     What is Sustainable Development Goals?
-                    <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Join to preserve the environment!
@@ -312,7 +320,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#how-to-join" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                     How to join
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -328,7 +336,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#team-formation" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                     Team Formation
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -344,7 +352,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#tracks" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                     Tracks
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -360,7 +368,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                     Judging Criteria
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -376,9 +384,9 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                     Submission Criteria
-                    <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     You can only submit your project once
@@ -392,7 +400,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#mentors" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                     Mentors
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -408,7 +416,7 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#chapters" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                     Chapters
                     <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
@@ -418,22 +426,11 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="py-6 space-y-2">
-              <a (click)="toggleMoreNavbar()" href="#hero" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Overview</a>
-              <a (click)="toggleMoreNavbar()" href="#what-is-kitahack" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">What is KitaHack</a>
-              <a (click)="toggleMoreNavbar()" href="#how-to-join" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">How to join</a>
-              <a (click)="toggleMoreNavbar()" href="#team-formation" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Team Formation</a>
-              <a (click)="toggleMoreNavbar()" href="#tracks" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Tracks</a>
-              <a (click)="toggleMoreNavbar()" href="#judging-criteria" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Judging Criteria</a>
-              <a (click)="toggleMoreNavbar()" href="#mentors" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Mentors</a>
-              <a (click)="toggleMoreNavbar()" href="#chapters" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Chapters</a>
-              <a (click)="toggleMoreNavbar()" href="#faqs" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">FAQs</a>
-            </div> -->
           </div>
         </div>
       </div>
       <div class="sticky bottom-0 flex flex-row w-full text-center bg-gray-50">
-        <a href="https://gdsc.community.dev/events/details/developer-student-clubs-monash-university-malaysia-presents-kitahack-2024-kickoff-session/" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
+        <a routerLink="/https://forms.gle/YCZZj5EQg5vS61y78" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
       </div>
     </div>
   </div>

@@ -6,5 +6,18 @@ import { Component, Input } from '@angular/core';
   styleUrl: './image.component.css',
 })
 export class ImageComponent {
-  @Input() value: any
+  @Input()
+  url: string | undefined;
+
+  @Input()
+  caption: string | undefined;
+
+  @Input()
+  withBorder: boolean = false;
+
+  @Input()
+  stretched: boolean = false;
+
+  @Input()
+  withBackground: boolean = false;
 }
