@@ -41,9 +41,9 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      const id = params.get('id');
-      if (id) {
-        this.clientPageService.getClientPage(id).subscribe({
+      const url = params.get('url');
+      if (url) {
+        this.clientPageService.getClientPageByUrl(url).subscribe({
           next: (clientPage) => {
             this.chapter = clientPage.chapter;
             this.clientPage = clientPage;

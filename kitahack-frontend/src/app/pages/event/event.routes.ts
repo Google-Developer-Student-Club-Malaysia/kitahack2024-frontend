@@ -3,20 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EventComponent } from './event.component';
 
-
 const routes: Routes = [
   {
-    path: ':id',
-    component: EventComponent
+    path: ':url',
+    component: EventComponent,
   },
   {
-    path: "**",
-    redirectTo: "/"
-  }
+    path: '**',
+    redirectTo: '/',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class EventRoutingModule {}
