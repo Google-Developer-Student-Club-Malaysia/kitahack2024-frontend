@@ -24,6 +24,7 @@ import { FAQsSectionComponent } from '../../sections/faqs-section/faqs-section.c
 
 // Services
 import { ChapterService } from '../../services/chapter.service';
+import { ClientPageService } from '../../services/clientpage.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,6 @@ import { ChapterService } from '../../services/chapter.service';
     FAQsSectionComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
-  providers: [ChapterService],
+  providers: [ChapterService, ClientPageService],
 })
 export class HomeModule {}

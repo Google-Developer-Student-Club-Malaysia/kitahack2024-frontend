@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ClientPage } from '../../types/clientpage.type';
 
 @Component({
   selector: 'app-navbar',
@@ -6,14 +7,27 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  navbarOpen = false;
-  buttonOpen = false;
+  @Input()
+  clientPages: ClientPage[] = [];
 
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
+  moreButtonOpen = false;
+  moreNavbarOpen = false;
+  eventButtonOpen = false;
+  eventNavbarOpen = false;
+
+  toggleMoreButton() {
+    this.moreButtonOpen = !this.moreButtonOpen;
   }
 
-  toggleButton() {
-    this.buttonOpen = !this.buttonOpen;
+  toggleMoreNavbar() {
+    this.moreNavbarOpen = !this.moreNavbarOpen;
+  }
+
+  toggleEventButton() {
+    this.eventButtonOpen = !this.eventButtonOpen;
+  }
+
+  toggleEventNavbar() {
+    this.eventNavbarOpen = !this.eventNavbarOpen;
   }
 }

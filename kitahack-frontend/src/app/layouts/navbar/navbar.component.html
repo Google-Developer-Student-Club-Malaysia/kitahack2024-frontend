@@ -1,44 +1,114 @@
 <header class="fixed top-0 z-20 w-full bg-white start-0">
   <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700">
-        <span class="sr-only">GDSC KitaHack</span>
+      <a routerLink="/" class="-m-1.5 p-1.5 flex flex-row items-center gap-3 text-gray-700">
+        <span class="sr-only">GDSC KitaHack {{ clientPages.length.toString() }}</span>
         <img width="125" height="125" src="assets/img/kitahack.png" />
       </a>
     </div>
-    <div class="flex lg:hidden">
-      <button (click)="toggleNavbar()" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+    <div class="flex space-x-5 lg:hidden">
+      <button (click)="toggleEventNavbar()" type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open event menu</span>
+        <svg class="w-6 h-6" fill="none" st1roke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z">
+          </path>
+        </svg>
+      </button>
+      <button (click)="toggleMoreNavbar()" type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#hero" class="text-sm font-semibold leading-6 text-gray-700">Overview</a>
-      <a href="#faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
+      <a routerLink="/" fragment="hero" class="text-sm font-semibold leading-6 text-gray-700">Overview</a>
+      <a routerLink="/" fragment="faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
 
       <div class="relative">
-        <button (click)="toggleButton()" type="button" class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1" aria-expanded="false">
-          More
+        <button (click)="toggleEventButton()" type="button"
+          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false"
+          [class.focused]="eventButtonOpen" (blur)="eventButtonOpen = false">
+          Events
           <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
           </svg>
         </button>
 
-        <div [ngClass]="buttonOpen ? '' : 'hidden'" class="absolute right-0 z-10 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh]">
+
+
+
+        <div [ngClass]="eventButtonOpen ? 'absolute' : 'hidden'"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh]"
+          (focusin)="eventButtonOpen = true" (focusout)="eventButtonOpen = false">
           <div class="p-4">
-            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path>
+            <div *ngFor="let clientPage of clientPages"
+              class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#hero" class="block font-semibold text-gray-700">
+                <a [routerLink]="'/event/' + clientPage.url" class="block font-semibold text-gray-700">
+                  {{ clientPage.name }}
+                  <span class="absolute inset-0" (click)="toggleEventButton()"></span>
+                </a>
+                <p class="mt-1 text-gray-600">
+                  {{ clientPage.chapter.name }}
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+              No events available
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <button (click)="toggleMoreButton()" type="button"
+          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false"
+          [class.focused]="moreButtonOpen" (blur)="moreButtonOpen = false">
+          More
+          <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <div [ngClass]="moreButtonOpen ? 'absolute' : 'hidden'"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh]"
+          (focusin)="moreButtonOpen = true" (focusout)="moreButtonOpen = false">
+          <div class="p-4">
+            <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                  </path>
+                </svg>
+              </div>
+              <div class="flex-auto">
+                <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                   What is KitaHack
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Get a better understanding of KitaHack 2024
@@ -46,15 +116,19 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#sdg" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                   What is Sustainable Development Goals?
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Join to preserve the environment!
@@ -62,15 +136,18 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#how-to-join" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                   How to join
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   A conversation between two friends
@@ -78,15 +155,19 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#team-formation" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                   Team Formation
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Stronger together
@@ -94,31 +175,38 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#tracks" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                   Tracks
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
-                  Normal Track and NGO Track
+                  Coming soon!
                 </p>
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                   Judging Criteria
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Take note 📝
@@ -126,15 +214,19 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                   Submission Criteria
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   You can only submit your project once
@@ -142,15 +234,19 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#mentors" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                   Mentors
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Remember these people
@@ -158,15 +254,19 @@
               </div>
             </div>
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-              <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"></path>
+              <div
+                class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5">
+                  </path>
                 </svg>
               </div>
               <div class="flex-auto">
-                <a href="#chapters" class="block font-semibold text-gray-700">
+                <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                   Chapters
-                  <span class="absolute inset-0" (click)="toggleButton()"></span>
+                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Organise with love 💖
@@ -175,22 +275,77 @@
             </div>
           </div>
           <div class="sticky bottom-0 flex flex-row w-full text-center bg-gray-50">
-            <a href="https://gdsc.community.dev/events/details/developer-student-clubs-monash-university-malaysia-presents-kitahack-2024-kickoff-session/" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
+            <a routerLink="/https://forms.gle/YCZZj5EQg5vS61y78" target="_blank" rel="noopener noreferrer"
+              class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <div [ngClass]="navbarOpen ? '' : 'hidden'" role="dialog" aria-modal="true">
+  <div [ngClass]="eventNavbarOpen ? '' : 'hidden'" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
-    <div class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    <div
+      class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="p-6">
         <div class="flex items-center justify-between">
           <img width="125" height="125" src="assets/img/kitahack.png" />
-          <button (click)="toggleNavbar()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <button (click)="toggleEventNavbar()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flow-root mt-6">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="py-6 space-y-2">
+              <div *ngFor="let clientPage of clientPages"
+                class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none"
+                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a (click)="toggleEventNavbar()" [routerLink]="'/event/' + clientPage.url"
+                    class="block font-semibold text-gray-700">
+                    {{ clientPage.name }}
+                    <span class="absolute inset-0" (click)="toggleEventButton()"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">
+                    {{ clientPage.chapter.name }}
+                  </p>
+                </div>
+              </div>
+
+              <div *ngIf="clientPages.length <= 0" class="p-5 text-center">
+                No events available
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="moreNavbarOpen ? '' : 'hidden'" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-10"></div>
+    <div
+      class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <img width="125" height="125" src="assets/img/kitahack.png" />
+          <button (click)="toggleMoreNavbar()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -199,15 +354,19 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="py-6 space-y-2">
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#hero" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                     What is KitaHack
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Get a better understanding of KitaHack 2024
@@ -215,15 +374,19 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#sdg" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                     What is Sustainable Development Goals?
-                    <span class="absolute inset-0" (click)="toggleButton()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Join to preserve the environment!
@@ -231,15 +394,18 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#how-to-join" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                     How to join
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     A conversation between two friends
@@ -247,15 +413,20 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none"
+                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#team-formation" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                     Team Formation
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Stronger together
@@ -263,31 +434,38 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#tracks" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                     Tracks
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
-                    Normal Track and NGO Track
+                    Coming soon!
                   </p>
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-blue-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                     Judging Criteria
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Take note 📝
@@ -295,15 +473,19 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-green-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#judging-criteria" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                     Submission Criteria
-                    <span class="absolute inset-0" (click)="toggleButton()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     You can only submit your project once
@@ -311,15 +493,20 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-yellow-500" fill="none"
+                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#mentors" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                     Mentors
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Remember these people
@@ -327,15 +514,19 @@
                 </div>
               </div>
               <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"></path>
+                <div
+                  class="flex items-center justify-center flex-none mt-1 rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-google-red-500" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5">
+                    </path>
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a href="#chapters" class="block font-semibold text-gray-700">
+                  <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                     Chapters
-                    <span class="absolute inset-0" (click)="toggleNavbar()"></span>
+                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Organise with love
@@ -343,22 +534,12 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="py-6 space-y-2">
-              <a (click)="toggleNavbar()" href="#hero" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Overview</a>
-              <a (click)="toggleNavbar()" href="#what-is-kitahack" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">What is KitaHack</a>
-              <a (click)="toggleNavbar()" href="#how-to-join" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">How to join</a>
-              <a (click)="toggleNavbar()" href="#team-formation" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Team Formation</a>
-              <a (click)="toggleNavbar()" href="#tracks" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Tracks</a>
-              <a (click)="toggleNavbar()" href="#judging-criteria" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Judging Criteria</a>
-              <a (click)="toggleNavbar()" href="#mentors" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Mentors</a>
-              <a (click)="toggleNavbar()" href="#chapters" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">Chapters</a>
-              <a (click)="toggleNavbar()" href="#faqs" class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-700 rounded-lg hover:bg-gray-50">FAQs</a>
-            </div> -->
           </div>
         </div>
       </div>
       <div class="sticky bottom-0 flex flex-row w-full text-center bg-gray-50">
-        <a href="https://gdsc.community.dev/events/details/developer-student-clubs-monash-university-malaysia-presents-kitahack-2024-kickoff-session/" target="_blank" rel="noopener noreferrer" class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
+        <a routerLink="/https://forms.gle/YCZZj5EQg5vS61y78" target="_blank" rel="noopener noreferrer"
+          class="w-full p-3 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-100">Register Here</a>
       </div>
     </div>
   </div>

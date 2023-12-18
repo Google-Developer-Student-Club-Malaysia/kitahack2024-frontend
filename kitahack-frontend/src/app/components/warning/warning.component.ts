@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-warning',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './warning.component.html',
-  styleUrl: './warning.component.css'
+  styleUrl: './warning.component.css',
 })
 export class WarningComponent {
+  @Input()
+  title: string | undefined;
 
+  @Input()
+  message: string | undefined;
 }

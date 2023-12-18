@@ -1,0 +1,33 @@
+<section class="container px-6 mx-auto mt-40">
+  <div class="px-6 text-gray-800 md:px-12 lg:text-left xl:px-52">
+    <div *ngIf="clientPage !== undefined && chapter !== undefined && blocks.length > 0">
+      <h2 class="font-semibold leading-7 text-google-blue-500">
+        {{ clientPage.chapter.name }}
+      </h2>
+      <p class="mt-2 text-3xl font-[GoogleSans-Bold] font-bold tracking-tight text-gray-700 sm:text-4xl">
+        {{ clientPage.name }}
+      </p>
+
+      <ng-container *ngFor="let block of blocks" [ngSwitch]="block.type">
+        <app-header *ngSwitchCase="'header'" [value]="block.data" />
+        <app-paragraph *ngSwitchCase="'paragraph'" [value]=" block.data.text" />
+        <app-image *ngSwitchCase="'image'" [url]="block.data.file.url" [caption]="block.data.caption" [withBorder]="block.data.withBorder" [withBackground]="block.data.withBackground" [stretched]="block.data.stretched" />
+        <app-delimiter *ngSwitchCase="'delimiter'" />
+        <app-personality *ngSwitchCase="'personality'" [name]="block.data.name" [description]="block.data.description" [link]="block.data.link" [photo]="block.data.photo" />
+        <app-attaches *ngSwitchCase="'attaches'" [value]="block.data" />
+        <app-quote *ngSwitchCase="'quote'" [value]="block.data" />
+        <app-code *ngSwitchCase="'code'" [value]="block.data" />
+        <app-list *ngSwitchCase="'list'" [value]="block.data.items" [style]="block.data.style" />
+        <app-nested-list *ngSwitchCase="'nestedList'" [value]="block.data.items" [style]="block.data.style" />
+        <app-check-list *ngSwitchCase="'checklist'" [value]="block.data.items" />
+        <app-table *ngSwitchCase="'table'" [value]="block.data.content" />
+        <app-warning *ngSwitchCase="'warning'" [title]="block.data.title" [message]="block.data.message" />
+        <app-link-tool *ngSwitchCase="'linkTool'" [link]="block.data.link" [title]="block.data.meta.title" [description]="block.data.meta.description" />
+      </ng-container>
+    </div>
+
+    <div *ngIf="clientPage === undefined || chapter === undefined || blocks.length <= 0" class="text-center">
+      <img src="/assets/img/google_developers_preloader.gif" alt="Google Developers Preloader">
+    </div>
+  </div>
+</section>

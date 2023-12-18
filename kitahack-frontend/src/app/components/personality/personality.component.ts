@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-personality',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './personality.component.html',
-  styleUrl: './personality.component.css'
+  styleUrl: './personality.component.css',
 })
 export class PersonalityComponent {
+  @Input()
+  name: string | undefined;
 
+  @Input()
+  description: string | undefined;
+
+  @Input()
+  link: string | undefined;
+
+  @Input()
+  photo: string | undefined;
 }

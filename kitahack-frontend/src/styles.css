@@ -1,3 +1,10 @@
+@import "../node_modules/prismjs/themes/prism.min.css";
+@import "../node_modules/prismjs/themes/prism-okaidia.min.css";
+@import "../node_modules/prismjs/plugins/toolbar/prism-toolbar.min.css";
+@import "../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.css";
+@import "../node_modules/prismjs/plugins/match-braces/prism-match-braces.min.css";
+@import "../node_modules/prismjs/plugins/previewers/prism-previewers.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,4 +71,9 @@
 
 * {
   font-family: GoogleSansDisplay-Regular, 'Times New Roman', Times, serif;
+}
+
+pre,
+code {
+  white-space: pre-line;
 }
