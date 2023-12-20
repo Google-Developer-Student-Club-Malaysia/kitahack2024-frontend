@@ -47,7 +47,7 @@
 
 
         <div [ngClass]="eventButtonOpen ? 'absolute' : 'hidden'"
-          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh]"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0"
           (focusin)="eventButtonOpen = true" (focusout)="eventButtonOpen = false">
           <div class="p-4">
             <div *ngFor="let clientPage of clientPages"
@@ -92,7 +92,7 @@
         </button>
 
         <div [ngClass]="moreButtonOpen ? 'absolute' : 'hidden'"
-          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh]"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0"
           (focusin)="moreButtonOpen = true" (focusout)="moreButtonOpen = false">
           <div class="p-4">
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
