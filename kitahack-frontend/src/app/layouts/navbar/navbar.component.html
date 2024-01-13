@@ -7,7 +7,7 @@
       </a>
     </div>
     <div class="flex space-x-5 lg:hidden">
-      <button (click)="toggleEventNavbar()" type="button"
+      <button (click)="changeSidemenu('events')" type="button"
         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open event menu</span>
         <svg class="w-6 h-6" fill="none" st1roke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
@@ -17,7 +17,7 @@
           </path>
         </svg>
       </button>
-      <button (click)="toggleMoreNavbar()" type="button"
+      <button (click)="changeSidemenu('more')" type="button"
         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open main menu</span>
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -32,9 +32,8 @@
       <a routerLink="/" fragment="faqs" class="text-sm font-semibold leading-6 text-gray-700">FAQs</a>
 
       <div class="relative">
-        <button (click)="toggleEventButton()" type="button"
-          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false"
-          [class.focused]="eventButtonOpen" (blur)="eventButtonOpen = false">
+        <button (click)="changeDropdown('events')" type="button"
+          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false">
           Events
           <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -46,9 +45,8 @@
 
 
 
-        <div [ngClass]="eventButtonOpen ? 'absolute' : 'hidden'"
-          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0"
-          (focusin)="eventButtonOpen = true" (focusout)="eventButtonOpen = false">
+        <div [ngClass]="currentDropdown === 'events' ? 'absolute' : 'hidden'"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0">
           <div class="p-4">
             <div *ngFor="let clientPage of clientPages"
               class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
@@ -64,7 +62,7 @@
               <div class="flex-auto">
                 <a [routerLink]="'/event/' + clientPage.url" class="block font-semibold text-gray-700">
                   {{ clientPage.name }}
-                  <span class="absolute inset-0" (click)="toggleEventButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   {{ clientPage.chapter.name }}
@@ -80,9 +78,8 @@
       </div>
 
       <div class="relative">
-        <button (click)="toggleMoreButton()" type="button"
-          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false"
-          [class.focused]="moreButtonOpen" (blur)="moreButtonOpen = false">
+        <button (click)="changeDropdown('more')" type="button"
+          class="flex items-center text-sm font-semibold leading-6 text-gray-700 gap-x-1 z-index" aria-expanded="false">
           More
           <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -91,9 +88,8 @@
           </svg>
         </button>
 
-        <div [ngClass]="moreButtonOpen ? 'absolute' : 'hidden'"
-          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0"
-          (focusin)="moreButtonOpen = true" (focusout)="moreButtonOpen = false">
+        <div [ngClass]="currentDropdown === 'more' ? 'absolute' : 'hidden'"
+          class="z-50 w-screen max-w-md mt-3 overflow-y-scroll bg-white shadow-lg top-full rounded-3xl ring-1 ring-gray-900/5 h-[70vh] right-0">
           <div class="p-4">
             <div class="relative flex p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
               <div
@@ -108,7 +104,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                   What is KitaHack
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Get a better understanding of KitaHack 2024
@@ -128,7 +124,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                   What is Sustainable Development Goals?
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Join to preserve the environment!
@@ -147,7 +143,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                   How to join
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   A conversation between two friends
@@ -167,7 +163,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                   Team Formation
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Stronger together
@@ -187,7 +183,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                   Tracks
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Coming soon!
@@ -206,7 +202,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                   Judging Criteria
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Take note 📝
@@ -226,7 +222,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                   Submission Criteria
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   You can only submit your project once
@@ -246,7 +242,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                   Mentors
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Remember these people
@@ -266,7 +262,7 @@
               <div class="flex-auto">
                 <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                   Chapters
-                  <span class="absolute inset-0" (click)="toggleMoreButton()"></span>
+                  <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                 </a>
                 <p class="mt-1 text-gray-600">
                   Organise with love 💖
@@ -283,14 +279,14 @@
     </div>
   </nav>
 
-  <div [ngClass]="eventNavbarOpen ? '' : 'hidden'" role="dialog" aria-modal="true">
+  <div [ngClass]="currentSidemenu === 'events' ? '' : 'hidden'" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
     <div
       class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="p-6">
         <div class="flex items-center justify-between">
           <img width="125" height="125" src="assets/img/kitahack.png" />
-          <button (click)="toggleEventNavbar()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <button (click)="currentSidemenu = null" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
@@ -314,10 +310,10 @@
                   </svg>
                 </div>
                 <div class="flex-auto">
-                  <a (click)="toggleEventNavbar()" [routerLink]="'/event/' + clientPage.url"
+                  <a (click)="currentSidemenu = null" [routerLink]="'/event/' + clientPage.url"
                     class="block font-semibold text-gray-700">
                     {{ clientPage.name }}
-                    <span class="absolute inset-0" (click)="toggleEventButton()"></span>
+                    <span class="absolute inset-0" (click)="currentDropdown = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     {{ clientPage.chapter.name }}
@@ -335,14 +331,14 @@
     </div>
   </div>
 
-  <div [ngClass]="moreNavbarOpen ? '' : 'hidden'" role="dialog" aria-modal="true">
+  <div [ngClass]="currentSidemenu === 'more' ? '' : 'hidden'" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
     <div
       class="fixed inset-y-0 right-0 z-10 flex flex-col justify-between w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="p-6">
         <div class="flex items-center justify-between">
           <img width="125" height="125" src="assets/img/kitahack.png" />
-          <button (click)="toggleMoreNavbar()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <button (click)="currentSidemenu = null" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
@@ -366,7 +362,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="hero" class="block font-semibold text-gray-700">
                     What is KitaHack
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Get a better understanding of KitaHack 2024
@@ -386,7 +382,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="sdg" class="block font-semibold text-gray-700">
                     What is Sustainable Development Goals?
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Join to preserve the environment!
@@ -405,7 +401,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="how-to-join" class="block font-semibold text-gray-700">
                     How to join
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     A conversation between two friends
@@ -426,7 +422,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="team-formation" class="block font-semibold text-gray-700">
                     Team Formation
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Stronger together
@@ -446,7 +442,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="tracks" class="block font-semibold text-gray-700">
                     Tracks
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Coming soon!
@@ -465,7 +461,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="judging-criteria" class="block font-semibold text-gray-700">
                     Judging Criteria
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Take note 📝
@@ -485,7 +481,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="submission-criteria" class="block font-semibold text-gray-700">
                     Submission Criteria
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     You can only submit your project once
@@ -506,7 +502,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="mentors" class="block font-semibold text-gray-700">
                     Mentors
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Remember these people
@@ -526,7 +522,7 @@
                 <div class="flex-auto">
                   <a routerLink="/" fragment="chapters" class="block font-semibold text-gray-700">
                     Chapters
-                    <span class="absolute inset-0" (click)="toggleMoreNavbar()"></span>
+                    <span class="absolute inset-0" (click)="currentSidemenu = null"></span>
                   </a>
                   <p class="mt-1 text-gray-600">
                     Organise with love
@@ -544,3 +540,5 @@
     </div>
   </div>
 </header>
+
+<div [ngClass]="currentDropdown ? 'fixed top-0 bottom-0 left-0 right-0' : 'hidden'" (click)="currentDropdown = null"></div>

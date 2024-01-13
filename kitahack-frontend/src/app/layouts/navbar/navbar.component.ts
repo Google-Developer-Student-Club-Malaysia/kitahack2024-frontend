@@ -10,24 +10,22 @@ export class NavbarComponent {
   @Input()
   clientPages: ClientPage[] = [];
 
-  moreButtonOpen = false;
-  moreNavbarOpen = false;
-  eventButtonOpen = false;
-  eventNavbarOpen = false;
+  currentDropdown: null | 'events' | 'more' = null;
+  currentSidemenu: null | 'events' | 'more' = null;
 
-  toggleMoreButton() {
-    this.moreButtonOpen = !this.moreButtonOpen;
+  changeDropdown(dropdown: 'events' | 'more') {
+    if (this.currentDropdown === dropdown) {
+      this.currentDropdown = null;
+    } else {
+      this.currentDropdown = dropdown;
+    }
   }
 
-  toggleMoreNavbar() {
-    this.moreNavbarOpen = !this.moreNavbarOpen;
-  }
-
-  toggleEventButton() {
-    this.eventButtonOpen = !this.eventButtonOpen;
-  }
-
-  toggleEventNavbar() {
-    this.eventNavbarOpen = !this.eventNavbarOpen;
+  changeSidemenu(sidemenu: 'events' | 'more') {
+    if (this.currentSidemenu === sidemenu) {
+      this.currentSidemenu = null;
+    } else {
+      this.currentSidemenu = sidemenu;
+    }
   }
 }
