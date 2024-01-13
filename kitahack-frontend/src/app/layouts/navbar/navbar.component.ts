@@ -30,4 +30,10 @@ export class NavbarComponent {
   toggleEventNavbar() {
     this.eventNavbarOpen = !this.eventNavbarOpen;
   }
+
+  toggleEventNavbarDelay() {
+    setTimeout(() => {
+      this.eventButtonOpen = false
+    }, 100);
+  }
 }
