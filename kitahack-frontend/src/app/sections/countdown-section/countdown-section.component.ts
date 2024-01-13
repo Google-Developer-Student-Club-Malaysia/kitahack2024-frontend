@@ -12,7 +12,7 @@ export class CountdownSectionComponent implements OnInit {
   seconds: string = '';
 
   ngOnInit(): void {
-    this.startCountdown('Jan 20, 2024 00:00:00');
+    this.startCountdown('Jan 28, 2024 00:00:00');
   }
 
   startCountdown(endDate: string): void {
