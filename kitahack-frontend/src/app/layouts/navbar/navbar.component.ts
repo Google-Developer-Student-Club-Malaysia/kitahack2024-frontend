@@ -28,4 +28,10 @@ export class NavbarComponent {
       this.currentSidemenu = sidemenu;
     }
   }
+
+  toggleEventNavbarDelay() {
+    setTimeout(() => {
+      this.eventButtonOpen = false
+    }, 100);
+  }
 }
